@@ -1,0 +1,312 @@
+{
+  "id": "published-published-imported-1764883051584-ki2gsndq-0-0",
+  "name": "Code Generation Agent Workflow (Langgraph)",
+  "description": "Professional langgraph agent workflow converted to n8n format. Execute tasks for Code Generation Agent. Features 2 agents with 8 integrated capabilities. Complexity: moderate. Industry: general. AI-matched with 84% confidence. Production-ready with comprehensive error handling and monitoring.",
+  "industry": "Technology",
+  "pattern": "ReAct",
+  "complexity": "Intermediate",
+  "tags": [
+    "ai-agent",
+    "n8n-workflow",
+    "automation",
+    "langgraph",
+    "moderate",
+    "web_search",
+    "code_interpreter",
+    "web_search",
+    "automation",
+    "workflow",
+    "imported",
+    "langgraph",
+    "universal-publisher"
+  ],
+  "steps": [
+    {
+      "id": "manual-trigger",
+      "name": "Manual Trigger",
+      "description": "n8n-nodes-base.manualTrigger node"
+    },
+    {
+      "id": "language-model",
+      "name": "Chat Model (Bedrock)",
+      "description": "@n8n/n8n-nodes-langchain.lmChatAwsBedrock node"
+    },
+    {
+      "id": "memory",
+      "name": "Memory",
+      "description": "@n8n/n8n-nodes-langchain.memoryBufferWindow node"
+    },
+    {
+      "id": "agent-0",
+      "name": "Step 1: Agent 1",
+      "description": "@n8n/n8n-nodes-langchain.agent node"
+    },
+    {
+      "id": "agent-1",
+      "name": "Step 2: Agent 2",
+      "description": "@n8n/n8n-nodes-langchain.agent node"
+    },
+    {
+      "id": "guard-0",
+      "name": "Guard 1",
+      "description": "n8n-nodes-base.function node"
+    },
+    {
+      "id": "guard-1",
+      "name": "Guard 2",
+      "description": "n8n-nodes-base.function node"
+    },
+    {
+      "id": "sanitize-output",
+      "name": "Sanitize Output",
+      "description": "n8n-nodes-base.function node"
+    },
+    {
+      "id": "agent-summary",
+      "name": "Summary",
+      "description": "@n8n/n8n-nodes-langchain.agent node"
+    },
+    {
+      "id": "compose-summary",
+      "name": "Compose Summary",
+      "description": "n8n-nodes-base.function node"
+    },
+    {
+      "id": "legend-sticky",
+      "name": "Legend",
+      "description": "n8n-nodes-base.stickyNote node"
+    },
+    {
+      "id": "legend-colors",
+      "name": "Legend: Colors",
+      "description": "n8n-nodes-base.stickyNote node"
+    },
+    {
+      "id": "execution-summary",
+      "name": "Execution Summary",
+      "description": "n8n-nodes-base.function node"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "manual-trigger",
+      "type": "agentbridge",
+      "data": {
+        "label": "Manual Trigger",
+        "description": "n8n-nodes-base.manualTrigger node",
+        "nodeType": "input",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 0,
+        "y": 100
+      }
+    },
+    {
+      "id": "language-model",
+      "type": "agentbridge",
+      "data": {
+        "label": "Chat Model (Bedrock)",
+        "description": "@n8n/n8n-nodes-langchain.lmChatAwsBedrock node",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 300,
+        "y": 100
+      }
+    },
+    {
+      "id": "memory",
+      "type": "agentbridge",
+      "data": {
+        "label": "Memory",
+        "description": "@n8n/n8n-nodes-langchain.memoryBufferWindow node",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 600,
+        "y": 100
+      }
+    },
+    {
+      "id": "agent-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "Step 1: Agent 1",
+        "description": "@n8n/n8n-nodes-langchain.agent node",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 900,
+        "y": 100
+      }
+    },
+    {
+      "id": "agent-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "Step 2: Agent 2",
+        "description": "@n8n/n8n-nodes-langchain.agent node",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1200,
+        "y": 100
+      }
+    },
+    {
+      "id": "guard-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "Guard 1",
+        "description": "n8n-nodes-base.function node",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1500,
+        "y": 100
+      }
+    },
+    {
+      "id": "guard-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "Guard 2",
+        "description": "n8n-nodes-base.function node",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1800,
+        "y": 100
+      }
+    },
+    {
+      "id": "sanitize-output",
+      "type": "agentbridge",
+      "data": {
+        "label": "Sanitize Output",
+        "description": "n8n-nodes-base.function node",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 2100,
+        "y": 100
+      }
+    },
+    {
+      "id": "agent-summary",
+      "type": "agentbridge",
+      "data": {
+        "label": "Summary",
+        "description": "@n8n/n8n-nodes-langchain.agent node",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 2400,
+        "y": 100
+      }
+    },
+    {
+      "id": "compose-summary",
+      "type": "agentbridge",
+      "data": {
+        "label": "Compose Summary",
+        "description": "n8n-nodes-base.function node",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 2700,
+        "y": 100
+      }
+    },
+    {
+      "id": "legend-sticky",
+      "type": "agentbridge",
+      "data": {
+        "label": "Legend",
+        "description": "n8n-nodes-base.stickyNote node",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 3000,
+        "y": 100
+      }
+    },
+    {
+      "id": "legend-colors",
+      "type": "agentbridge",
+      "data": {
+        "label": "Legend: Colors",
+        "description": "n8n-nodes-base.stickyNote node",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 3300,
+        "y": 100
+      }
+    },
+    {
+      "id": "execution-summary",
+      "type": "agentbridge",
+      "data": {
+        "label": "Execution Summary",
+        "description": "n8n-nodes-base.function node",
+        "nodeType": "output",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 3600,
+        "y": 100
+      }
+    }
+  ],
+  "publishedAt": "2025-12-04T21:32:19.146Z",
+  "destination": "launchpad",
+  "deployments": 3,
+  "lastDeployed": "2025-12-04T21:32:19.146Z",
+  "configuration": {
+    "provider": "azure",
+    "region": "eastus",
+    "compute": "cpu-optimized"
+  },
+  "healthStatus": "healthy",
+  "deploymentCount": 10,
+  "githubRepo": "https://github.com/agentbridge/code-generation-agent-workflow-(langgraph)",
+  "maintainer": "You",
+  "downloads": 417,
+  "rating": 4.889507273515424,
+  "createdAt": "2025-12-04T21:32:19.146Z",
+  "updatedAt": "2025-12-04T21:32:19.146Z",
+  "isPublished": true,
+  "isFeatured": false,
+  "deploymentMetadata": {
+    "publishedBy": "You",
+    "publishedAt": "2025-12-04T21:32:19.146Z",
+    "source": "Template Selection",
+    "version": "1.0.0"
+  }
+}
